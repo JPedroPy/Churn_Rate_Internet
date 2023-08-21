@@ -36,7 +36,7 @@ The data was extracted from the file `cancelations.csv`
 ### _3. Data Cleaning and Preprocessing_ [⬆️ Return]()
 Using the library [pandas](https://pandas.pydata.org/docs/) to import and interprete the data:
 
-  import pandas as pd
+    import pandas as pd
     
     internet_df = pd.read_csv('cancelations.csv')
     internet_df.info()
@@ -128,26 +128,26 @@ Analyzing the generated charts, some of them exhibited intriguing patterns: `ida
 ### _Idade_
 ![idade](https://github.com/JPedroPy/Churn_Rate_Internet/assets/141521444/434b35c6-39d6-460a-8986-80cd2f0d0b48)
 
-Repare que as idades acima de 50 anos sempre cancelam o serviço.
+Notice that customers `above 50 years old` consistently cancel the service.
 
 ### _Total_Gasto_
 ![total_gasto](https://github.com/JPedroPy/Churn_Rate_Internet/assets/141521444/0d0b5dc8-0adf-4c68-9707-e6789ede2293)
 
-Observe que serviços cujos valores gastos são menores do que 497.5 sempre são cancelados.
+Observe that services with spending amounts `below 497.5` are consistently canceled.
 
 ### _Ligacoes_Callcenter_
 ![callcenter](https://github.com/JPedroPy/Churn_Rate_Internet/assets/141521444/8766b304-6cb3-4d1e-950e-525ab7073e45)
 
-Estatisticamente, em quase todas as ocasiões em que os clientes ligaram 5 vezes ou mais, eles cancelaram.
+Statistically, in almost all instances where customers called `5 times or more`, they churned.
 
 ### _Assinatura_
 ![monthly](https://github.com/JPedroPy/Churn_Rate_Internet/assets/141521444/d91912ea-5603-4b21-8e89-6ff1398003b8)
 
-Todas as assinaturas mensais são canceladas.
+All `monthly` subscriptions are canceled.
 
 ### _Dias_Atraso_
 ![dias_atraso](https://github.com/JPedroPy/Churn_Rate_Internet/assets/141521444/c2de6ae4-e822-49dd-9a0b-e5e19dd13a90)
 
-Quando o pagamento atrasa além de 20 dias, os clientes cancelam.
+When the payment is delayed by `more than 20 days`, customers churn.
 
 ### _6. Conclusion and Recommendations_ [⬆️ Return]
