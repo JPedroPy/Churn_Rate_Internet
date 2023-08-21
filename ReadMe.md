@@ -28,7 +28,7 @@ In this study, we will analyze various variables related to an internet company,
 - Contract Duration
 - Total Spent
 - Months since last interaction
-- churned
+- Churned
 
 ### _2. Collect Data_ [⬆️ Return]()
 The data was extracted from the file `cancelations.csv`
@@ -114,7 +114,7 @@ With `1.0` representing `Yes` and `0.0` representing `No`, we observe that `56.7
 ### _4. Data Analysis Techniques_ [⬆️ Return]()
 Histogram charts will be used to analyze correlations between variables.
 
-### _5. Exploratory Data Analysis (EDA) and Interpretation of Results_ [⬆️ Return]
+### _5. Exploratory Data Analysis (EDA) and Interpretation of Results_ [⬆️ Return]()
 To aid in understanding the reasons contributing to a higher cancellation rate of services, histogram charts were generated, with the dependent variable being 'cancelou'. This analysis aims to examine how other variables impact churn. Therefore:
 
     colors = {1.0:'red', 0.0:'green'}
@@ -150,4 +150,30 @@ All `monthly` subscriptions are canceled.
 
 When the payment is delayed by `more than 20 days`, customers churn.
 
-### _6. Conclusion and Recommendations_ [⬆️ Return]
+### _Applying the suggested filters_
+    internet_df = internet_df[internet_df['duracao_contrato'] != 'Monthly']
+    internet_df = internet_df[internet_df['idade'] <= 50.00]
+    internet_df = internet_df[internet_df['ligacoes_callcenter'] <= 4.00]
+    internet_df = internet_df[internet_df['dias_atraso'] <= 20.00]
+    internet_df = internet_df[internet_df['total_gasto'] >= 497.50]
+    qtd_cancel = internet_df['cancelou'].value_counts(normalize = True)
+
+    cancelou
+    0.0    0.951529
+    1.0    0.048471
+
+Thus, with the implemented changes, it can be observed that the cancellation rate is now only `4.85%`.
+
+### _6. Conclusion and Recommendations_ [⬆️ Return]()
+
+Considering the obtained results, some insights can be drawn:
+
+- `Monthly` contracts should be completely `eliminated`.
+- Advertising efforts should be `focused` on customers `below the age of 50`, given that older customers consistently cancel.
+- `Avoid` customers making `more than 4 calls`, implying that the call center should prioritize customers who are nearing the 4-call mark.
+- `Preventing delays` from `exceeding 20 days`, by offering conditions that encourage customers to make payments when the delay extends.
+- Exploring ways to increase the `total spent` to a `minimum of 497.50`.
+
+Taking these actions, we have observed that the cancellations, which previously stood at `56.71%`, have now reduced to `4.85%`, an almost negligible value. This highlights that the mentioned actions are indeed effective.
+
+
