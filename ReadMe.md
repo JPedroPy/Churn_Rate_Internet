@@ -2,19 +2,19 @@
 An analysis of data regarding the churn of an internet service provided by a company, aiming to comprehend issues and enhance churn rate.
 
 ## _Stages of Analysis_
-[1. Define the problem]()
+[1. Define the problem](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#1-define-the-problem-%EF%B8%8F-return)
 
-[2. Collect Data]()
+[2. Collect Data](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#2-collect-data-%EF%B8%8F-return)
 
-[3. Data Cleaning and Preprocessing]()
+[3. Data Cleaning and Preprocessing](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#3-data-cleaning-and-preprocessing-%EF%B8%8F-return)
 
-[4. Data Analysis Techniques]()
+[4. Data Analysis Techniques](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#4-data-analysis-techniques-%EF%B8%8F-return)
 
-[5. Exploratory Data Analysis (EDA) and Interpretation of Results]()
+[5. Exploratory Data Analysis (EDA) and Interpretation of Results](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#5-exploratory-data-analysis-eda-and-interpretation-of-results-%EF%B8%8F-return)
 
-[6. Conclusion and Recommendations]()
+[6. Conclusion and Recommendations](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#6-conclusion-and-recommendations-%EF%B8%8F-return)
 
-### _1. Define the problem_ [⬆️ Return]()
+### _1. Define the problem_ [⬆️ Return](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#stages-of-analysis)
 In this study, we will analyze various variables related to an internet company, with the goal of examining the cancellation rate and implementing improvements to minimize this rate. The mentioned variables are:
 
 - CustomerID
@@ -30,10 +30,10 @@ In this study, we will analyze various variables related to an internet company,
 - Months since last interaction
 - Churned
 
-### _2. Collect Data_ [⬆️ Return]()
+### _2. Collect Data_ [⬆️ Return](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#stages-of-analysis)
 The data was extracted from the file `cancelations.csv`
 
-### _3. Data Cleaning and Preprocessing_ [⬆️ Return]()
+### _3. Data Cleaning and Preprocessing_ [⬆️ Return](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#stages-of-analysis)
 Using the library [pandas](https://pandas.pydata.org/docs/) to import and interprete the data:
 
     import pandas as pd
@@ -102,7 +102,7 @@ Removing the customer ID column (irrelevant):
      9   meses_ultima_interacao  881659 non-null  float64
      10  cancelou                881659 non-null  float64
 
-### _Initial churn rate_
+### _Initial churn rate_ [⬆️ Return](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#stages-of-analysis)
     qtd_cancel = internet_df['cancelou'].value_counts(normalize = True)
     
     cancelou
@@ -111,10 +111,10 @@ Removing the customer ID column (irrelevant):
 
 With `1.0` representing `Yes` and `0.0` representing `No`, we observe that `56.71%` of the customers have canceled the service.
 
-### _4. Data Analysis Techniques_ [⬆️ Return]()
+### _4. Data Analysis Techniques_ [⬆️ Return](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#stages-of-analysis)
 Histogram charts will be used to analyze correlations between variables.
 
-### _5. Exploratory Data Analysis (EDA) and Interpretation of Results_ [⬆️ Return]()
+### _5. Exploratory Data Analysis (EDA) and Interpretation of Results_ [⬆️ Return](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#stages-of-analysis)
 To aid in understanding the reasons contributing to a higher cancellation rate of services, histogram charts were generated, with the dependent variable being 'cancelou'. This analysis aims to examine how other variables impact churn. Therefore:
 
     colors = {1.0:'red', 0.0:'green'}
@@ -150,7 +150,7 @@ All `monthly` subscriptions are canceled.
 
 When the payment is delayed by `more than 20 days`, customers churn.
 
-### _Applying the suggested filters_
+### _Applying the suggested filters_ [⬆️ Return](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#stages-of-analysis)
     internet_df = internet_df[internet_df['duracao_contrato'] != 'Monthly']
     internet_df = internet_df[internet_df['idade'] <= 50.00]
     internet_df = internet_df[internet_df['ligacoes_callcenter'] <= 4.00]
@@ -164,7 +164,7 @@ When the payment is delayed by `more than 20 days`, customers churn.
 
 Thus, with the implemented changes, it can be observed that the cancellation rate is now only `4.85%`.
 
-### _6. Conclusion and Recommendations_ [⬆️ Return]()
+### _6. Conclusion and Recommendations_ [⬆️ Return](https://github.com/JPedroPy/Churn_Rate_Internet/blob/main/ReadMe.md#stages-of-analysis)
 
 Considering the obtained results, some insights can be drawn:
 
