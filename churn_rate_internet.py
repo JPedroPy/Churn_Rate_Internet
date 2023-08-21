@@ -28,7 +28,7 @@ for coluna in internet_df.columns:
 #Applying improvements
 internet_df = internet_df[internet_df['duracao_contrato'] != 'Monthly']
 internet_df = internet_df[internet_df['idade'] <= 50]
-internet_df = internet_df[internet_df['ligacoes_callcenter'] <= 5]
+internet_df = internet_df[internet_df['ligacoes_callcenter'] <= 4]
 internet_df = internet_df[internet_df['dias_atraso'] <= 20]
 internet_df = internet_df[internet_df['total_gasto'] >= 497.5]
 qtd_cancel = internet_df['cancelou'].value_counts(normalize = True)
